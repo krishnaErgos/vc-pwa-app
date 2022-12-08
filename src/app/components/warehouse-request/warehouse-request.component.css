@@ -1,0 +1,159 @@
+.humanIcon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 260px;
+    height: 260px;
+}
+
+.navTitle {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.mat-tab-label {
+    min-width: 50% !important;
+}
+
+.navbar {
+    box-shadow: none !important;
+}
+
+.segView {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 11px rgba(85, 85, 85, 0.1);
+    height: 55px;
+}
+
+.cardView {
+    margin: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 10px 0px 0px #f5f5f5;
+    height: 200px;
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+
+@media screen and (min-device-width: 360px) and (max-device-width: 411px) {
+    .cardView {
+        height: 200px;
+    }
+    .tabScroller {
+        height: 78vh !important;
+    }
+}
+
+.productName {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Montserrat";
+    margin-bottom: 0px;
+}
+
+.atrId {
+    margin-bottom: 3px;
+    color: #1A1E24;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.createdDate {
+    margin-bottom: 3px;
+    color: #929292;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.approvedBadge {
+    background: #E3FFEB;
+    border-radius: 25px;
+    padding: 5px 7px;
+    margin-bottom: 27px;
+}
+
+.approvedBadge a {
+    color: #008C00;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.farmerTitle {
+    color: #929292;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.farmerName {
+    color: #1A1E24;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.btnSec {
+    border-top: 1px solid #D3D3D3;
+    height: 50px;
+}
+
+.rightBorder {
+    border-right: 1px solid #D3D3D3;
+}
+
+.btnView {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #252525;
+    margin: 13px 0;
+}
+
+.tabScroller {
+    overflow-x: auto;
+    overflow-y: scroll;
+    height: 82vh;
+}
+
+.ion-content-scroll-host {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    justify-content: center;
+}
+
+.float {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 65px;
+    right: 40px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #F5F5F5;
+    box-shadow: 0px 4px 13px rgba(85, 83, 83, 0.15);
+    z-index: 99;
+    border-radius: 50px;
+}
+
+.my-float {
+    margin-top: 12px;
+    height: 25px;
+}

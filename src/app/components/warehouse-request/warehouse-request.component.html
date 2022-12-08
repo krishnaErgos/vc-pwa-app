@@ -1,0 +1,289 @@
+<a class="float">
+    <img src="../../assets/icons/AddIcon.png" class="my-float" (click)="addWareHouseModal()">
+</a>
+<nav class="navbar navbar-light navbar-expand-sm bg-light fixed-top">
+    <div class="container-fluid">
+        <a routerLink="/landing" class="navbar-brand">
+            <img src="../../assets/images/leftArrow.png" style="width: 20px;height: 16px;">&nbsp;&nbsp;
+            <span class="navTitle">Warehouse Request</span>
+        </a>
+    </div>
+</nav>
+
+<div style="margin-top: 60px;">
+    <ion-segment class="segView" (ionChange)="segmentChanged($event)" value="list">
+        <ion-segment-button value="list">
+            <ion-label>
+                New
+            </ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="card">
+            <ion-label>
+                History
+            </ion-label>
+        </ion-segment-button>
+    </ion-segment>
+    <div class="animate__animated animate__slideInUp animate__fast tabScroller" *ngIf="segment === 'list'">
+        <ion-card class="cardView">
+            <ion-card-content class="pb-0">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="../../assets/images/Rectangle.png">
+                    </div>
+                    <div class="col-5 p-0">
+                        <h3 class="productName">Maize</h3>
+                        <p class="atrId">ATR-001757</p>
+                        <a class="createdDate">23 July 2021  10:00 AM</a>
+
+                    </div>
+                    <div class="col-4 float-right text-right pl-1">
+                        <span class="badge badge-success approvedBadge"><a>Approved</a></span>
+                        <p class="atrId">Quantity: 255 Q</p>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <p class="farmerTitle">farmer</p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="farmerTitle">delivered date</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="farmerName">Abhiram Ray </p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="farmerName">25 July 2021</p>
+                    </div>
+                </div>
+                <div class="row btnSec">
+                    <div class="col-6 rightBorder text-center" (click)="LtDetailsModal()">
+                        <p class="btnView">LT Details</p>
+                    </div>
+                    <div class="col-6 text-center">
+                        <p class="btnView">Call</p>
+                    </div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+        <ion-card class="cardView">
+            <ion-card-content class="pb-0">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="../../assets/images/Maize_images.png">
+                    </div>
+                    <div class="col-5 p-0">
+                        <h3 class="productName">Maize</h3>
+                        <p class="atrId">ATR-001757</p>
+                        <a class="createdDate">23 July 2021  10:00 AM</a>
+
+                    </div>
+                    <div class="col-4 float-right text-right pl-1">
+                        <span class="badge badge-success approvedBadge"><a>Approved</a></span>
+                        <p class="atrId">Quantity: 255 Q</p>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <p class="farmerTitle">farmer</p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="farmerTitle">delivered date</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="farmerName">Abhiram Ray </p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="farmerName">25 July 2021</p>
+                    </div>
+                </div>
+                <div class="row btnSec">
+                    <div class="col-6 rightBorder text-center" (click)="LtDetailsModal()">
+                        <p class="btnView">LT Details</p>
+                    </div>
+                    <div class="col-6 text-center">
+                        <p class="btnView">Call</p>
+                    </div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+        <ion-card class="cardView">
+            <ion-card-content class="pb-0">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="../../assets/images/paddy_images.png">
+                    </div>
+                    <div class="col-5 p-0">
+                        <h3 class="productName">Maize</h3>
+                        <p class="atrId">ATR-001757</p>
+                        <a class="createdDate">23 July 2021  10:00 AM</a>
+
+                    </div>
+                    <div class="col-4 float-right text-right pl-1">
+                        <span class="badge badge-success approvedBadge"><a>Approved</a></span>
+                        <p class="atrId">Quantity: 255 Q</p>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <p class="farmerTitle">farmer</p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="farmerTitle">delivered date</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="farmerName">Abhiram Ray </p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="farmerName">25 July 2021</p>
+                    </div>
+                </div>
+                <div class="row btnSec">
+                    <div class="col-6 rightBorder text-center" (click)="LtDetailsModal()">
+                        <p class="btnView">LT Details</p>
+                    </div>
+                    <div class="col-6 text-center">
+                        <p class="btnView">Call</p>
+                    </div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+        <ion-card class="cardView">
+            <ion-card-content class="pb-0">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="../../assets/images/Rectangle.png">
+                    </div>
+                    <div class="col-5 p-0">
+                        <h3 class="productName">Maize</h3>
+                        <p class="atrId">ATR-001757</p>
+                        <a class="createdDate">23 July 2021  10:00 AM</a>
+
+                    </div>
+                    <div class="col-4 float-right text-right pl-1">
+                        <span class="badge badge-success approvedBadge"><a>Approved</a></span>
+                        <p class="atrId">Quantity: 255 Q</p>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <p class="farmerTitle">farmer</p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="farmerTitle">delivered date</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="farmerName">Abhiram Ray </p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="farmerName">25 July 2021</p>
+                    </div>
+                </div>
+                <div class="row btnSec">
+                    <div class="col-6 rightBorder text-center" (click)="LtDetailsModal()">
+                        <p class="btnView">LT Details</p>
+                    </div>
+                    <div class="col-6 text-center">
+                        <p class="btnView">Call</p>
+                    </div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+        <ion-card class="cardView">
+            <ion-card-content class="pb-0">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="../../assets/images/Rectangle.png">
+                    </div>
+                    <div class="col-5 p-0">
+                        <h3 class="productName">Maize</h3>
+                        <p class="atrId">ATR-001757</p>
+                        <a class="createdDate">23 July 2021  10:00 AM</a>
+
+                    </div>
+                    <div class="col-4 float-right text-right pl-1">
+                        <span class="badge badge-success approvedBadge"><a>Approved</a></span>
+                        <p class="atrId">Quantity: 255 Q</p>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <p class="farmerTitle">farmer</p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="farmerTitle">delivered date</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="farmerName">Abhiram Ray </p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="farmerName">25 July 2021</p>
+                    </div>
+                </div>
+                <div class="row btnSec">
+                    <div class="col-6 rightBorder text-center" (click)="LtDetailsModal()">
+                        <p class="btnView">LT Details</p>
+                    </div>
+                    <div class="col-6 text-center">
+                        <p class="btnView">Call</p>
+                    </div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+    <div class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'card'">
+        <ion-card class="cardView">
+            <ion-card-content class="pb-0">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="../../assets/images/Rectangle.png">
+                    </div>
+                    <div class="col-5 p-0">
+                        <h3 class="productName">Maize</h3>
+                        <p class="atrId">ATR-001757</p>
+                        <a class="createdDate">23 July 2021  10:00 AM</a>
+
+                    </div>
+                    <div class="col-4 float-right text-right pl-1">
+                        <span class="badge badge-success approvedBadge"><a>Approved</a></span>
+                        <p class="atrId">Quantity: 255 Q</p>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <p class="farmerTitle">farmer</p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="farmerTitle">delivered date</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="farmerName">Abhiram Ray </p>
+                    </div>
+                    <div class="col-6 text-right">
+                        <p class="farmerName">25 July 2021</p>
+                    </div>
+                </div>
+                <div class="row btnSec">
+                    <div class="col-6 rightBorder text-center" (click)="LtDetailsModal()">
+                        <p class="btnView">LT Details</p>
+                    </div>
+                    <div class="col-6 text-center">
+                        <p class="btnView">Call</p>
+                    </div>
+                </div>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</div>
+<ion-footer collapse="fade" id="footer">
+    <div class="row btnSec">
+        <div class="col-6 rightBorder text-center" style="background-color: white;" (click)="presentModal()">
+            <img class="btnView" src="/../../assets/icons/sort.png">&nbsp;
+            <span class="btnView">SORT BY</span>
+        </div>
+        <div class="col-6 text-center" style="background-color: white;" (click)="filterModal()">
+            <img class="btnView" src="/../../assets/icons/filter.png">&nbsp;
+            <span class="btnView">FILTER</span>
+        </div>
+    </div>
+</ion-footer>

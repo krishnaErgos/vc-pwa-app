@@ -1,0 +1,74 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button color="dark" (click)="closeModal()">
+                <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Filter</ion-title>
+        <ion-buttons slot="end">
+            <ion-button class="resetBtn">
+                Reset
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container-fluid">
+        <div class="mt-4 status">
+            <label nzFor="ATR No" class="filterTitle" nzRequired>Status</label>
+            <ion-list>
+                <ion-radio-group [allowEmptySelection]="true" value="turtles">
+                    <ion-item class="ion-no-padding">
+                        <ion-label>Approved</ion-label>
+                        <ion-radio slot="start" value="Approved"></ion-radio>
+                    </ion-item>
+
+                    <ion-item class="ion-no-padding">
+                        <ion-label>Rejected</ion-label>
+                        <ion-radio slot="start" value="Rejected"></ion-radio>
+                    </ion-item>
+
+                    <ion-item class="ion-no-padding">
+                        <ion-label>Open</ion-label>
+                        <ion-radio slot="start" value="Open"></ion-radio>
+                    </ion-item>
+
+                    <ion-item class="ion-no-padding">
+                        <ion-label>Processed</ion-label>
+                        <ion-radio slot="start" value="Processed"></ion-radio>
+                    </ion-item>
+                </ion-radio-group>
+            </ion-list>
+        </div>
+        <div class="mt-4">
+            <label nzFor="ATR No" class="filterTitle" nzRequired>Start Date</label>
+            <ion-item>
+                <ion-label style="padding: 0px;position: fixed;left: 15px;">
+                    <ion-icon name="calendar-clear-outline" class="calIcon"></ion-icon>
+                </ion-label>
+                <ion-input value="{{ StartDate | date: 'dd/MM/yyyy' }}" placeholder="Select Date" id="StartDate" class="ion-text-end"></ion-input>
+                <ion-popover trigger="StartDate" size="cover" id="popover-bottom">
+                    <ng-template>
+                        <ion-datetime presentation="date" [(ngModel)]="StartDate"></ion-datetime>
+                    </ng-template>
+                </ion-popover>
+            </ion-item>
+        </div>
+        <div class="mt-4">
+            <label nzFor="ATR No" class="filterTitle" nzRequired>End Date</label>
+            <ion-item>
+                <ion-label style="padding: 0px;position: fixed;left: 15px;">
+                    <ion-icon name="calendar-clear-outline" class="calIcon"></ion-icon>
+                </ion-label>
+                <ion-input value="{{ EndDate | date: 'dd/MM/yyyy' }}" placeholder="Select Date" id="EndDate" class="ion-text-end"></ion-input>
+                <ion-popover trigger="EndDate" size="cover" id="popover-bottom">
+                    <ng-template>
+                        <ion-datetime presentation="date" [(ngModel)]="EndDate"></ion-datetime>
+                    </ng-template>
+                </ion-popover>
+            </ion-item>
+        </div>
+    </div>
+</ion-content>

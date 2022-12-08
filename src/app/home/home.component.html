@@ -1,0 +1,68 @@
+<!-- <app-header></app-header> -->
+<div class="">
+    <img src="/../../assets/images/BGmg2.png">
+</div>
+<div class="text-center mt-4 mb-4">
+    <img class="logoImg" src="/../../assets/icons/icon-512x512.png">
+</div>
+<div class="text-center mt-4 mb-5">
+    <form [formGroup]="loginForm" (ngSubmit)="doLogin()" class="form-block">
+        <div class="row">
+            <div class="col-12">
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your username!">
+                        <nz-input-group nzPrefixIcon="user">
+                            <input type="text" nz-input formControlName="username" placeholder="Username" class="field-height-input-login" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <!-- <mat-form-field appearance="fill">
+                  <mat-label>Username</mat-label>
+                  <mat-icon matPrefix class="form-icon">person_outline</mat-icon>
+                  <input matInput autofocus formControlName="username">
+                  <div *ngIf="submitted && f.username.errors" class="invalid-error">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div>
+                </mat-form-field> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Password!">
+                        <nz-input-group nzPrefixIcon="lock">
+                            <input type="password" nz-input formControlName="password" placeholder="Password" class="field-height-input-login" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+                <!-- <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <mat-icon matPrefix class="form-icon">lock_outline</mat-icon>
+              <input type="password" matInput formControlName="password">
+              <div *ngIf="submitted && f.password.errors" class="invalid-error">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+            </mat-form-field> -->
+
+                <div class="egb-login">
+
+                    <button nz-button nzType="primary" class="login-form-button login-form-margin margin-right-top" [disabled]="isLoading">
+              <i nz-icon nzType="login" nzTheme="outline" *ngIf="!isLoading" class="lg-ico"></i>
+              <i class="fa" [ngClass]="{'fa-spin fa-spinner': isLoading}"></i> {{button}}
+            </button>
+
+                    <!-- <button mat-flat-button color="primary"  class="egb-primary-btn" [disabled]="isLoading">
+              <i class="fa" [ngClass]="{'fa-spin fa-spinner': isLoading}"></i> {{button}}
+            </button> -->
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- <div class="text-center">
+    <ion-button fill="outline" color="dark" class="SignUpBtn" routerLink="/landing">Sign up</ion-button>
+</div>
+<div class="text-center mt-2">
+    <ion-button color="danger" class="signInBtn" routerLink="/landing">Sign In</ion-button>
+</div> -->

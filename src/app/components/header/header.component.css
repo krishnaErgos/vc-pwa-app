@@ -1,0 +1,37 @@
+.wellComeText {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #929292;
+    position: absolute;
+    top: 15px;
+}
+
+.userNameText {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    color: #1A1E24;
+    position: absolute;
+    top: 30px;
+}
+
+.navbar-nav {
+    background: #fafafa;
+    padding: 10px;
+    box-shadow: 0px 3px 3px 1px rgb(0 0 0 / 12%);
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: rgba(0, 0, 0, .9);
+    font-family: 'Montserrat';
+    font-weight: 500;
+    border-bottom: 0.5px solid #d9d9d952;
+}

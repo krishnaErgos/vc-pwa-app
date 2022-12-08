@@ -1,0 +1,362 @@
+ion-title {
+    font-family: 'Montserrat'!important;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+ion-label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #1A1E24;
+}
+
+.resetBtn {
+    color: #912328;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.filterTitle {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #1A1E24;
+    margin: 0px;
+}
+
+.calIcon {
+    color: #646464;
+    font-size: 20px;
+}
+
+.status ion-item {
+    --border-color: white;
+}
+
+ion-popover#popover-bottom::part(content) {
+    top: unset !important;
+    left: 0 !important;
+    bottom: 0;
+    width: 100vw;
+    border-radius: 0;
+}
+
+ion-popover.popover-bottom ion-datetime {
+    margin-left: auto;
+    margin-right: auto;
+    --background: white;
+}
+
+.datetime-size-fixed {
+    max-width: none;
+}
+
+.cardView {
+    margin: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 10px 0px 0px #f5f5f5;
+    height: 175px;
+    margin-top: 3px;
+    margin-bottom: 15px;
+    border-top: 8px solid #f5f5f5;
+}
+
+.productName {
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "Montserrat";
+    margin-bottom: 0px;
+}
+
+.createdDate {
+    margin-bottom: 3px;
+    color: #929292;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.cardViewList {
+    margin: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 10px 0px 0px #f5f5f5;
+    height: auto;
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+
+.atrId {
+    margin-bottom: 3px;
+    color: #1A1E24;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.approvedBadge {
+    background: #E3FFEB;
+    border-radius: 25px;
+    padding: 5px 7px;
+    margin-bottom: 27px;
+}
+
+.approvedBadge a {
+    color: #008C00;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.OpenBadge {
+    background: #FFD4A2;
+    border-radius: 25px;
+    padding: 5px 7px;
+    margin-bottom: 27px;
+}
+
+.OpenBadge a {
+    color: #543802;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.farmerTitle {
+    color: #929292;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.farmerName {
+    color: #1A1E24;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.titleText {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    align-items: center;
+    text-transform: uppercase;
+    color: #929292;
+    margin-bottom: 0px;
+}
+
+.valueText {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    align-items: center;
+    color: #1A1E24;
+}
+
+.FillLTDetailsSec {
+    border-top: 1px solid #F2F2F2;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.FillLTDetailsBtn {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: #000000;
+    margin: 0px;
+}
+
+.qty {
+    float: right;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    margin-top: -10px;
+    color: #929292;
+}
+
+.qty span {
+    color: #1A1E24;
+}
+
+.deliveredOrderNo {
+    color: #929292;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 13px;
+    margin-bottom: 0px;
+}
+
+.deliveredOrderValue {
+    color: #1A1E24;
+    font-size: 14px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.expiresIn {
+    color: green;
+    font-size: 14px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    float: right;
+}
+
+.createdDate {
+    margin-bottom: 3px;
+    color: #929292;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.approvedBadge {
+    background: #bcd2ff;
+    border-radius: 25px;
+    padding: 5px 7px;
+    margin-bottom: 27px;
+}
+
+.approvedBadge a {
+    color: blue;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.farmerTitle {
+    color: #929292;
+    font-size: 10px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.farmerName {
+    color: #1A1E24;
+    font-size: 12px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+ion-segment-button::part(indicator-background) {
+    background: #EA4750;
+}
+
+ion-segment-button.md::part(native) {
+    color: #000;
+}
+
+.segment-button-checked.md::part(native) {
+    color: #EA4750;
+}
+
+ion-segment-button.md::part(indicator-background) {
+    height: 4px;
+}
+
+.rightBorder {
+    border-right: 1px solid #D3D3D3;
+}
+
+.btnView {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #252525;
+    margin: 14px 0;
+}
+
+.btnSec {
+    border-top: 1px solid #D3D3D3;
+    height: 50px;
+    margin-top: 1px;
+}
+
+.navbar {
+    height: 60px;
+    box-shadow: none !important;
+    margin-bottom: 6px;
+    height: 60px;
+}
+
+.float {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 65px;
+    right: 40px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #F5F5F5;
+    box-shadow: 0px 4px 13px rgba(85, 83, 83, 0.15);
+    z-index: 99;
+    border-radius: 50px;
+}
+
+.my-float {
+    margin-top: 12px;
+    height: 25px;
+}
+
+ion-modal#example-modal {
+    --width: fit-content;
+    --min-width: 300px;
+    --height: fit-content;
+    --border-radius: 6px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+}
+
+ion-modal#example-modal h1 {
+    margin: 20px 20px 10px 20px;
+}
+
+ion-modal#example-modal ion-icon {
+    margin-right: 6px;
+    width: 48px;
+    height: 48px;
+    padding: 4px 0;
+    color: #aaaaaa;
+}
+
+#example-modal ion-label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1A1E24;
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    background-color: #d9363e;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    margin-left: -6px;
+}

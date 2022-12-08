@@ -1,0 +1,89 @@
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+@import "~ng-zorro-antd/style/index.min.css";
+@import '@fontsource/montserrat';
+@import '@fontsource/montserrat/200';
+@import '@fontsource/montserrat/600-italic';
+@import '@fontsource/montserrat/300';
+@import '@fontsource/montserrat/400';
+@import '@fontsource/montserrat/500';
+@import '@fontsource/montserrat/600';
+@import '@fontsource/montserrat/700';
+@import '@fontsource/montserrat/800';
+@import '@fontsource/montserrat/900';
+
+/* Import base styles */
+
+@import "~ng-zorro-antd/button/style/index.min.css";
+
+/* Import one component's styles */
+
+.navbar {
+    height: 60px;
+    box-shadow: -1px -5px 2px #00000029, 0 2px 4px #0000003b !important;
+    margin-bottom: 6px;
+    height: 60px;
+}
+
+.navbar-nav {
+    background: #f8f9fa;
+    padding: 5px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', "Helvetica Neue", sans-serif;
+}
+
+.multiselect-item-checkbox input[type=checkbox]+div:before {
+    border: 2px solid #dc3545 !important;
+    color: #dc3545 !important;
+}
+
+.multiselect-item-checkbox input[type=checkbox]:checked+div:before {
+    -webkit-animation: .2s ease-in borderscale;
+    animation: .2s ease-in borderscale;
+    background: #dc3545 !important;
+}
+
+.multiselect-dropdown .dropdown-btn .selected-item-container .selected-item {
+    border: 1px solid #dc3545 !important;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    background: #dc3545 !important;
+    padding: 0 5px;
+    color: #fff;
+    border-radius: 2px;
+    float: left;
+}
+
+.multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret:before {
+    position: relative;
+    right: 0;
+    top: 65%;
+    color: #999;
+    margin-top: 4px;
+    border-style: solid;
+    border-width: 5px 5px 0 !important;
+    border-color: #999 transparent;
+    content: "";
+}
+
+.warehouseFL .multiselect-dropdown .dropdown-btn {
+    border: none !important;
+    border-bottom: 1px solid #d9d9d9 !important;
+    border-radius: 0px !important;
+    margin-top: 14px !important;
+    padding-left: 0px !important;
+}
+
+.productPop .alert-title.sc-ion-alert-md {
+    color: var(--ion-text-color, #000);
+    font-size: 16px !important;
+    font-weight: 500;
+    font-family: 'Montserrat';
+}

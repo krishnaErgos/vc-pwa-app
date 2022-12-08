@@ -1,0 +1,128 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button color="dark" (click)="closeModal()">
+                <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Filter</ion-title>
+        <ion-buttons slot="end">
+            <ion-button class="resetBtn">
+                Reset
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container-fluid">
+        <!-- <div class="mt-4">
+            <ng-multiselect-dropdown placeholder="Buyer Search" style="font-family: Montserrat, 'Font Awesome 4 Free'" [settings]="dropdownSettings" [data]="dropdownList" [(ngModel)]="selectedItems" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+            </ng-multiselect-dropdown>
+
+        </div> -->
+        <form [formGroup]="FilterForm">
+            <div class="mt-4">
+                <label nzFor="ATR No" class="filterTitle" nzRequired>Product</label>
+                <ion-item class="ion-no-padding productPop">
+                    <ion-label style="font-size: 14px;font-family: Montserrat, 'Font Awesome 4 Free'">Select Product</ion-label>
+                    <ion-select color="danger" formControlName="product" style="font-size: 14px;font-family: Montserrat, 'Font Awesome 4 Free'">
+                        <ion-select-option *ngFor="let data of products" value="{{data.iproductId}}">{{data.sproduct}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+            </div>
+            <div class="mt-4">
+                <label nzFor="ATR No" class="filterTitle" nzRequired>Warehouse</label>
+                <ng-multiselect-dropdown class="warehouseFL" formControlName="warehouse" placeholder="Select Warehouse" [settings]="dropdownSettingsWarehouse" [data]="warehouses" [(ngModel)]="selectedItemsWarehouse" (onSelect)="onItemSelectWarehouse($event)" (onSelectAll)="onSelectAllWarehouse($event)"
+                    style="font-family: Montserrat, 'Font Awesome 4 Free'">
+                </ng-multiselect-dropdown>
+            </div>
+            <div class="mt-4">
+                <label nzFor="ATR No" class="filterTitle" nzRequired>SO NO</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Enter text" formControlName="sono"></ion-input>
+                </ion-item>
+            </div>
+            <div class="mt-4">
+                <label nzFor="ATR No" class="filterTitle" nzRequired>Delivery Order NO</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Enter text" formControlName="dono"></ion-input>
+                </ion-item>
+            </div>
+            <div class="mt-4 status">
+                <label nzFor="ATR No" class="filterTitle" nzRequired>Status</label>
+                <ion-list>
+                    <ion-radio-group [allowEmptySelection]="true" formControlName="status" value="turtles" class="row ml-0">
+                        <ion-item class="ion-no-padding col-6">
+                            <ion-label>Open</ion-label>
+                            <ion-radio color="danger" slot="start" value="0"></ion-radio>
+                        </ion-item>
+
+                        <ion-item class="ion-no-padding col-6">
+                            <ion-label>Qty Fullfilled</ion-label>
+                            <ion-radio color="danger" slot="start" value="1"></ion-radio>
+                        </ion-item>
+
+                        <ion-item class="ion-no-padding col-6">
+                            <ion-label>Qty Finalized</ion-label>
+                            <ion-radio color="danger" slot="start" value="2"></ion-radio>
+                        </ion-item>
+
+
+                        <ion-item class="ion-no-padding col-6">
+                            <ion-label>canceled</ion-label>
+                            <ion-radio color="danger" slot="start" value="3"></ion-radio>
+                        </ion-item>
+
+                        <ion-item class="ion-no-padding col-6">
+                            <ion-label>Expired</ion-label>
+                            <ion-radio color="danger" slot="start" value="4"></ion-radio>
+                        </ion-item>
+
+                        <ion-item class="ion-no-padding col-6">
+                            <ion-label>DC in Progress</ion-label>
+                            <ion-radio color="danger" slot="start" value="dc_created"></ion-radio>
+                        </ion-item>
+
+                    </ion-radio-group>
+                </ion-list>
+            </div>
+            <div class="mt-4">
+                <label nzFor="ATR No" class="filterTitle" nzRequired>Start Date</label>
+                <ion-item class="ion-no-padding">
+                    <ion-label>
+                        <ion-icon name="calendar-clear-outline" class="calIcon"></ion-icon>
+                    </ion-label>
+                    <ion-input value="{{ StartDate | date: 'dd/MM/yyyy' }}" placeholder="Select Date" id="StartDate" class="ion-text-end"></ion-input>
+                    <ion-popover trigger="StartDate" size="cover" id="popover-bottom">
+                        <ng-template>
+                            <ion-datetime presentation="date" [(ngModel)]="StartDate" formControlName="startDate" ngModelOptions="{standalone: true}"></ion-datetime>
+                        </ng-template>
+                    </ion-popover>
+                </ion-item>
+            </div>
+            <div class="mt-4">
+                <label nzFor="ATR No" class="filterTitle" nzRequired>End Date</label>
+                <ion-item class="ion-no-padding">
+                    <ion-label>
+                        <ion-icon name="calendar-clear-outline" class="calIcon"></ion-icon>
+                    </ion-label>
+                    <ion-input value="{{ EndDate | date: 'dd/MM/yyyy' }}" placeholder="Select Date" id="EndDate" class="ion-text-end"></ion-input>
+                    <ion-popover trigger="EndDate" size="cover" id="popover-bottom">
+                        <ng-template>
+                            <ion-datetime presentation="date" [(ngModel)]="EndDate" formControlName="endDate" ngModelOptions="{standalone: true}"></ion-datetime>
+                        </ng-template>
+                    </ion-popover>
+                </ion-item>
+            </div>
+        </form>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <div class="container-fluid">
+            <button color="danger" expand="full" class="btn btn-danger applyFilterBtn" (click)="confirm()">Apply Filter</button>
+        </div>
+    </ion-toolbar>
+</ion-footer>

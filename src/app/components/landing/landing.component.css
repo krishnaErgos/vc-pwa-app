@@ -1,0 +1,20 @@
+.imgDiv {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.welcomeText {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.detailText {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 16px;
+    color: #1A1E24;
+    text-align: center;
+}

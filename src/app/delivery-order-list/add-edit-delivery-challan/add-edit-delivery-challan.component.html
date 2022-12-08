@@ -1,0 +1,443 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button color="dark" (click)="closeModal()">
+                <img src="../../assets/images/leftArrow.png" style="width: 20px;height: 16px;">
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Add/Edit Delivery Challan</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="VehicleWise">
+    <form [formGroup]="VehicleWiseForm">
+        <div class="container-fluid mb-2">
+
+            <div class="row">
+                <div class="col-6 pr-0 pl-0">
+                    <ion-card class="cardSize">
+                        <ion-card-content>
+                            <p class="cardTitle">Sales Orderd Quantity Q</p>
+                            <p class="cardValue">{{salesOrderQuantity}} Q</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+                <div class="col-6 pl-0 pr-0">
+                    <ion-card class="cardSize">
+                        <ion-card-content>
+                            <p class="cardTitle">Delivery Orderd Quantity Q</p>
+                            <p class="cardValue">{{deliveryOrderQuantity}} Q</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 pr-0 pl-0">
+                    <ion-card class="cardSize">
+                        <ion-card-content>
+                            <p class="cardTitle">Available Quantity (Quintal)</p>
+                            <p class="cardValue">{{availableStock}} Q</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+                <div class="col-6 pl-0 pr-0">
+                    <ion-card class="cardSize">
+                        <ion-card-content>
+                            <p class="cardTitle">DC Created Quantity Q</p>
+                            <p class="cardValue">{{totalDcQuantity}} Q</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 pr-0 pl-0">
+                    <ion-card class="card">
+                        <ion-card-content>
+
+                            <div class="row">
+                                <div class="col-8">
+                                    <p class="cardTitle2">Challan Quantity (Quintal)</p>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <p class="cardValue">{{challanQuantity}} Q</p>
+                                </div>
+                            </div>
+
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <label class="filterTitle required">Weighting Method</label>
+                <ion-item class="ion-no-padding">
+                    <ion-label>Select Weighting Method</ion-label>
+                    <ion-select [(ngModel)]="WeightingMethod" formControlName="weightingMethod" ngModelOptions="{standalone: true}" (ionChange)=onWeighingChange($event)>
+                        <ion-select-option value="Vehicle">Vehicle Wise</ion-select-option>
+                        <ion-select-option value="Bag">Bag Wise</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <span class="error" *ngIf="isSubmitted && errorControl.weightingMethod.errors?.required">
+                    Weighting Method is required.
+                </span>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle required">Total Weight(Vehicle + Cargo)(In MT)</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Total Weight" formControlName="totalWeight"></ion-input>
+                </ion-item>
+                <span class="error" *ngIf="isSubmitted && errorControl.totalWeight.errors?.required">
+                    Total Weight is required.
+                </span>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle required">Tare Weight</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Tare Weight" formControlName="tareWeight"></ion-input>
+                </ion-item>
+                <span class="error" *ngIf="isSubmitted && errorControl.tareWeight.errors?.required">
+                    Tare Weight is required.
+                </span>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle required">Net Weight(In MT)</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Net Weight" formControlName="netWeight"></ion-input>
+                </ion-item>
+                <span class="error" *ngIf="isSubmitted && errorControl.netWeight.errors?.required">
+                    Net Weight is required.
+                </span>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle required">Total Grain Value</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Total Grain Value" formControlName="totalGrainValue"></ion-input>
+                </ion-item>
+                <span class="error" *ngIf="isSubmitted && errorControl.totalGrainValue.errors?.required">
+                    Total Grain Value is required.
+                </span>
+            </div>
+
+            <div class="mt-4">
+                <label class="filterTitle required">Vehicle Number</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Enter Vehicle Number" formControlName="vehicleNumber"></ion-input>
+                </ion-item>
+                <span class="error" *ngIf="isSubmitted && errorControl.vehicleNumber.errors?.required">
+                    Vehicle Number is required.
+                </span>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle">Driver Name</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Enter Driver Name" formControlName="driverName"></ion-input>
+                </ion-item>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle">Weighing Bridge Name</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Enter Weighing Bridge Name" formControlName="weighingBridgeName">
+                    </ion-input>
+                </ion-item>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle">Distance To Weighing(KG)</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Distance From Warehouse To Weighing" formControlName="distanceToWeighing">
+                    </ion-input>
+                </ion-item>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle mb-2">Gate Pass Remarks</label>
+                <ion-item class="ion-no-padding" style="border: 1px solid lightgray;
+            border-radius: 8px;
+            padding-left: 5px;
+            padding-right: 5px;">
+                    <ion-textarea placeholder="Gate Pass Remarks" formControlName="gatePassRemarks" class="mt-0" rows="5" cols="5" autoGrow="true">
+                    </ion-textarea>
+                </ion-item>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle required">Total No. Bags</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Total No. Bags" formControlName="totalNoOfBags"></ion-input>
+                </ion-item>
+                <span class="error" *ngIf="isSubmitted && errorControl.totalNoOfBags.errors?.required">
+                    Total No. Bags is required.
+                </span>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle required">RST No.</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="RST No." formControlName="rstNo"></ion-input>
+                </ion-item>
+                <span class="error" *ngIf="isSubmitted && errorControl.rstNo.errors?.required">
+                    RST No. is required.
+                </span>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle required">RST Date</label>
+                <ion-item class="ion-no-padding">
+                    <ion-label>
+                        <ion-icon name="calendar-clear-outline" class="calIcon"></ion-icon>
+                    </ion-label>
+                    <ion-input value="{{ rstDate | date: 'dd/MM/yyyy' }}" placeholder="Challan Date" id="rstDate" class="ion-text-end"></ion-input>
+                    <ion-popover trigger="rstDate" size="cover" id="popover-bottom">
+                        <ng-template>
+                            <ion-datetime presentation="date" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="rstDate" ngModelOptions="{standalone: true}" formControlName="rstDate">
+                            </ion-datetime>
+                        </ng-template>
+                    </ion-popover>
+                </ion-item>
+                <span class="error" *ngIf="isSubmitted && errorControl.rstDate.errors?.required">
+                    RST Date is required.
+                </span>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle required">Upload RST Slip</label>
+                <div class="wrapper">
+                    <div class="file-upload">
+                        <input type="file" id="fileLoader" #fileLoader (change)="onFileChange(fileLoader);onFileChanged($event)" formControlName="fileControl" />
+                        <img src="../../assets/images/UploadImage.png" style="width: 36px;height: 33px;">
+                    </div>
+                </div>
+                <span class="error" *ngIf="ShowRSTSlipReq">
+                    RST Slip is required.
+                </span>
+            </div>
+            <div class="mt-3 text-center">
+                <img src={{url}}>
+            </div>
+        </div>
+    </form>
+</ion-content>
+
+<ion-footer *ngIf="VehicleWise">
+    <ion-toolbar>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6 pr-1">
+                    <ion-button fill="outline" color="dark" class="saveBtn">Previous</ion-button>
+                </div>
+                <div class="col-6 pl-1">
+                    <ion-button color="danger" class="saveBtn" (click)="submitForm()">Save & Next</ion-button>
+                </div>
+            </div>
+        </div>
+    </ion-toolbar>
+</ion-footer>
+
+
+
+<ion-content *ngIf="bagWise">
+    <form [formGroup]="BagWisePageOneForm">
+        <div class="container-fluid mb-2" *ngIf="pageOne">
+            <div class="row">
+                <div class="col-6 pr-0 pl-0">
+                    <ion-card class="cardSize">
+                        <ion-card-content>
+                            <p class="cardTitle">Sales Orderd Quantity Q</p>
+                            <p class="cardValue">{{salesOrderQuantity}} Q</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+                <div class="col-6 pl-0 pr-0">
+                    <ion-card class="cardSize">
+                        <ion-card-content>
+                            <p class="cardTitle">Delivery Orderd Quantity Q</p>
+                            <p class="cardValue">{{deliveryOrderQuantity}} Q</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 pr-0 pl-0">
+                    <ion-card class="cardSize">
+                        <ion-card-content>
+                            <p class="cardTitle">Available Quantity (Quintal)</p>
+                            <p class="cardValue">{{availableStock}} Q</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+                <div class="col-6 pl-0 pr-0">
+                    <ion-card class="cardSize">
+                        <ion-card-content>
+                            <p class="cardTitle">DC Created Quantity Q</p>
+                            <p class="cardValue">{{totalDcQuantity}} Q</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle required">Weighting Method</label>
+                <ion-item class="ion-no-padding">
+
+                    <ion-label>Select Weighting Method</ion-label>
+                    <ion-select [(ngModel)]="WeightingMethod" formControlName="weightingMethod" ngModelOptions="{standalone: true}" (ionChange)=onWeighingChange($event)>
+                        <ion-select-option value="Vehicle">Vehicle Wise</ion-select-option>
+                        <ion-select-option value="Bag">Bag Wise</ion-select-option>
+                    </ion-select>
+                    <span class="error" *ngIf="isSubmittedBWPageOne && BagWisePageOneForm.get('weightingMethod').errors?.required">
+                        Weighting Method is required.
+                    </span>
+                </ion-item>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle">Driver Name</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Enter Driver Name" formControlName="driverName"></ion-input>
+                </ion-item>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle required">Vehicle Number</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Enter Vehicle Number" formControlName="vehicleNumberPO"></ion-input>
+                </ion-item>
+                <span class="error" *ngIf="isSubmittedBWPageOne && BagWisePageOneForm.get('vehicleNumberPO').errors?.required">
+                    Vehicle Number is required.
+                </span>
+            </div>
+            <div class="mt-4">
+                <label class="filterTitle mb-2">Gate Pass Remarks</label>
+                <ion-item class="ion-no-padding" style="border: 1px solid lightgray;
+          border-radius: 8px;
+          padding-left: 5px;
+          padding-right: 5px;">
+                    <ion-textarea placeholder="Gate Pass Remarks" formControlName="gatePassRemarks" class="mt-0" rows="5" cols="5" autoGrow="true">
+                    </ion-textarea>
+                </ion-item>
+
+            </div>
+
+
+        </div>
+    </form>
+    <form [formGroup]="pageTwoform">
+        <div class="container-fluid mb-2" *ngIf="pageTwo">
+
+            <div class="row">
+                <div class="col-6 pr-0 pl-0">
+                    <ion-card class="cardSize">
+                        <ion-card-content>
+                            <p class="cardTitle">Sales Orderd Quantity Q</p>
+                            <p class="cardValue">{{salesOrderQuantity}} Q</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+                <div class="col-6 pl-0 pr-0">
+                    <ion-card class="cardSize">
+                        <ion-card-content>
+                            <p class="cardTitle">Delivery Orderd Quantity Q</p>
+                            <p class="cardValue">{{deliveryOrderQuantity}} Q</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 pr-0 pl-0">
+                    <ion-card class="cardSize">
+                        <ion-card-content>
+                            <p class="cardTitle">Available Quantity (Quintal)</p>
+                            <p class="cardValue">{{availableStock}} Q</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+                <div class="col-6 pl-0 pr-0">
+                    <ion-card class="cardSize">
+                        <ion-card-content>
+                            <p class="cardTitle">DC Created Quantity Q</p>
+                            <p class="cardValue">{{totalDcQuantity}} Q</p>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <label class="filterTitle required">Total No. of Bags</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input type="number" placeholder="Total No. of Bags" [(ngModel)]="BagsCount" formControlName="totalNumberOfBags"></ion-input>
+                </ion-item>
+                <ion-button fill="outline" color="danger" class="submitBtn" (click)="addControl()">Submit
+                </ion-button>
+                <span class="error" *ngIf="isSubmittedBWPageTwo && pageTwoform.get('totalNumberOfBags').errors?.required">
+                    Total No. of Bags is required.
+                </span>
+            </div>
+
+            <div class="mt-4">
+                <label class="filterTitle required">Total Grain Value</label>
+                <ion-item class="ion-no-padding">
+                    <ion-input placeholder="Enter Rate/MT" formControlName="totalGrainValuePT"></ion-input>
+                </ion-item>
+                <span class="error" *ngIf="isSubmittedBWPageTwo && pageTwoform.get('totalGrainValuePT').errors?.required">
+                    Total Grain Value is required.
+                </span>
+            </div>
+
+            <div class="mt-2">
+                <ion-card class="m-0">
+                    <ion-card-content class="p-2">
+
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="cardTitle3">Total (IN MT)</p>
+                            </div>
+                            <div class="col-4 text-right">
+                                <p class="cardValue1">{{totalGrainNetWeight}}</p>
+                            </div>
+                        </div>
+
+                    </ion-card-content>
+                </ion-card>
+            </div>
+
+            <div class="row">
+                <div class="col-6 mt-4" *ngFor="let control of  rolesFieldAsFormArray.controls ;let i = index;" formArrayName='roles'>
+                    <div [formGroupName]="i">
+                        <label class="filterTitle required">Bag(KG)</label>
+                        <ion-item class="ion-no-padding">
+                            <ion-input type="number" placeholder="Enter Weight" formControlName="role"></ion-input>
+                        </ion-item>
+                        <ion-icon name="remove-circle-outline" class="DeleteBtn" style="color: red;" (click)="remove(i)">
+                        </ion-icon>
+                        <span class="error" *ngIf="isSubmittedBWPageTwo && control.controls.role.errors?.required">
+                            Weight is required.
+                          </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</ion-content>
+
+<ion-footer *ngIf="bagWise && pageOne">
+    <ion-toolbar>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6 pr-1">
+                    <ion-button fill="outline" color="dark" class="saveBtn">Previous</ion-button>
+                </div>
+                <div class="col-6 pl-1">
+                    <ion-button color="danger" class="saveBtn" (click)="submitFormBagWise()">Save & Next</ion-button>
+                </div>
+            </div>
+        </div>
+    </ion-toolbar>
+</ion-footer>
+
+<ion-footer *ngIf="bagWise && pageTwo">
+    <ion-toolbar>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6 pr-1">
+                    <ion-button fill="outline" color="dark" class="saveBtn" (click)="pageTwoClick()">Previous
+                    </ion-button>
+                </div>
+                <div class="col-6 pl-1">
+                    <ion-button color="danger" class="saveBtn" type="submit" (click)="formValue()">Save & Next
+                    </ion-button>
+                </div>
+            </div>
+        </div>
+    </ion-toolbar>
+</ion-footer>

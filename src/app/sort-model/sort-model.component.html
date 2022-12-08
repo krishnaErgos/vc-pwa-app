@@ -1,0 +1,31 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-title>SORT BY</ion-title>
+    </ion-toolbar>
+</ion-header> -->
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title style="text-align: center;">SORT BY</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="confirm()">Confirm</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-radio-group [allowEmptySelection]="true" value="turtles" [(ngModel)]="name">
+            <ion-item>
+                <ion-label>Recent Request </ion-label>
+                <ion-radio slot="start" value="Recent Request"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Oldest Request</ion-label>
+                <ion-radio slot="start" value="Oldest Request"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+    </ion-list>
+</ion-content>
